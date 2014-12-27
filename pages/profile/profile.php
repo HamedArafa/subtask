@@ -1,26 +1,41 @@
-<!DOCTYPE html>
-<html>
-	<head>
+<?PHP
+    session_start();
+	$hostname = "localhost"; // usually is localhost, but if not sure, check with your hosting company, if you are with webune leave as localhost 
+	$db_user = "root"; // change to your database password 
+	$db_password = ""; // change to your database password 
+	$database = "subtask"; // provide your database name 
+	$db_table = "users"; // Your Table Name where you want to Store Your Image. 
+	# STOP HERE 
+	#################################################################### 
+	# THIS CODE IS USED TO CONNECT TO THE MYSQL DATABASE 
+	$db = mysql_connect($hostname, $db_user, $db_password); 
+	mysql_select_db($database,$db);
 
-	</head>
+	$current_user_name=$_SESSION["current_user_name"];
+	
 
-	<body>
-	    <h1>Registration From</h1>
-		<form id="myform" name="myform" action="" method="">
-            First Name<input type="text" id="fname_txt" name="fname_txt" /> <br/>
-            Last Name<input type="text" id="lname_txt" name="lname_txt"/><br/>
-            User Name<input type="text" id="uname_txt" name="uname_txt"/><br/>
-            Password<input type="password" id="pass1_txt" name="pass1_txt"/><br/>
-			Re-Password<input type="password" id="pass2_txt" name="pass2_txt"/><br/>
-			Email<input type="email" id="email_txt" name="email_txt"/><br/>
-			Country<input type="text" id="country_txt" name="country_txt"/><br/>
-			Quote <br/>
-			<textarea rows="4" cols="50">
-			TYPE YOUR QUOTE
-			</textarea>	<br/>
-            <!-- we will put the photo later-->
-            <input type="submit" value="Register"/>
+	$query = "SELECT * FROM users where user_name='{$current_user_name}' ";
 
-		</form>
-	</body>
-</html>
+	$result = mysql_query($query) or die(mysql_error());
+	while($row = mysql_fetch_array($result))
+	{    
+         echo "<div>" . $row['first_name'] . "</div>";
+         
+
+         echo "<div>" ;  
+	     echo "<img border=\"0\" src=\"../Register/".$row['image']."\" width=\"200\" alt=\"Your Name\" height=\"200\">";
+	     echo "</div>";
+
+	     echo "<div>";
+	     echo "" . $row['quote'];
+	     echo "</div>";
+
+
+	     
+	     echo "<div >";
+	     echo "country: ".$row['country'] . "<br/>";
+	     echo "member since: ".$row['member_since'] . "<br/>";
+	     echo "score: ".$row['score'] . "<br/>";
+	     echo "</div>";
+	}
+?>

@@ -6,42 +6,23 @@
 	</head>
 
 	<body>
-	    <h1>Register</h1>
-		<form id="myform" name="myform" action="" method="">
+                  
+	    <h1>Registration From</h1>
+		<form id="myform" name="myform" action="register_process.php" method="post" enctype="multipart/form-data">
+            First Name<input type="text" id="fname_txt" name="fname_txt" /> <br/>
+            Last Name<input type="text" id="lname_txt" name="lname_txt"/><br/>
+            User Name<input type="text" id="uname_txt" name="uname_txt"/><br/>
+            Password<input type="password" id="pass1_txt" name="pass1_txt"/><br/>
+			Re-Password<input type="password" id="pass2_txt" name="pass2_txt"/><br/>
+			Email<input type="email" id="email_txt" name="email_txt"/><br/>
+			Country<input type="text" id="country_txt" name="country_txt"/><br/>
+			Quote <br/>
+			<textarea rows="4" cols="50" name="quote" id="quote">
+			TYPE YOUR QUOTE
+			</textarea>	<br/>
+            
+    		<input type="file" name="photo" size="2000000" accept="image/gif, image/jpeg, image/x-ms-bmp, image/x-png" size="26"><br/>
 
-			<div class="input-group" subtask-text-input>
-  				<input type="text" class="form-control" placeholder="first name" aria-describedby="basic-addon1"
-				 id="fname_txt" name="fname_txt">
-			</div>
-                        <div class="input-group subtask-text-input">
-                                <input type="text" class="form-control" placeholder="last name" aria-describedby="basic-addon1"
-                                 id="lname_txt" name="lname_txt">
-                        </div>
-                         <div class="input-group subtask-text-input">
-                                <input type="text" class="form-control" placeholder="user name" aria-describedby="basic-addon1"
-                                 id="uname_txt" name="uname_txt">
-                        </div>
-                         <div class="input-group subtask-text-input">
-                                <input type="text" class="form-control" placeholder="password" aria-describedby="basic-addon1"
-                                 id="pass1_txt" name="pass1_txt">
-                        </div>
-                        <div class="input-group subtask-text-input">
-                                <input type="text" class="form-control" placeholder="re-password" aria-describedby="basic-addon1"
-                                 id="pass2_txt" name="pass2_txt">
-                        </div>
-                          <div class="input-group subtask-text-input">
-                                <input type="text" class="form-control" placeholder="email" aria-describedby="basic-addon1"
-                                 id="email_txt" name="email_txt">
-                        </div>
- 
-			<!-- Drop down list for countries later -->
-
-
-<!-- make an input field for quote--> <div class="input-group subtask-text-input">
-                                <input type="text" rows="4" cols="50" class="form-control" placeholder="type your quote here" aria-describedby="basic-addon1"
-                                 id="fname_txt" name="fname_txt">
-                        </div>
-            <!-- we will put the photo later-->
             <input type="submit" value="Register"/>
 
 		</form>
