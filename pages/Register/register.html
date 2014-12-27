@@ -6,7 +6,7 @@
 
 	<body>
 	    <h1>Registration From</h1>
-		<form id="myform" name="myform" action="" method="">
+		<form id="myform" name="myform" action="register_process.php" method="post" enctype="multipart/form-data">
             First Name<input type="text" id="fname_txt" name="fname_txt" /> <br/>
             Last Name<input type="text" id="lname_txt" name="lname_txt"/><br/>
             User Name<input type="text" id="uname_txt" name="uname_txt"/><br/>
@@ -15,10 +15,12 @@
 			Email<input type="email" id="email_txt" name="email_txt"/><br/>
 			Country<input type="text" id="country_txt" name="country_txt"/><br/>
 			Quote <br/>
-			<textarea rows="4" cols="50">
+			<textarea rows="4" cols="50" name="quote" id="quote">
 			TYPE YOUR QUOTE
 			</textarea>	<br/>
-            <!-- we will put the photo later-->
+            
+    		<input type="file" name="photo" size="2000000" accept="image/gif, image/jpeg, image/x-ms-bmp, image/x-png" size="26"><br/>
+
             <input type="submit" value="Register"/>
 
 		</form>
