@@ -1,30 +1,72 @@
 <!DOCTYPE html>
 <html>
 	<head>
+
+		<script type='text/javascript' src='../../bower_components/jquery/dist/jquery.js'></script>		
+		<script type='text/javascript' src='../../bower_components/bootstrap/dist/js/bootstrap.js'></script>
 		<link rel='stylesheet' href='../../bower_components/bootstrap/dist/css/bootstrap.min.css'>
 		<link rel='stylesheet' href='../../globalstyling.css'>
 	</head>
 
 	<body>
-                  
-	    <h1>Registration From</h1>
-		<form id="myform" name="myform" action="register_process.php" method="post" enctype="multipart/form-data">
-            First Name<input type="text" id="fname_txt" name="fname_txt" /> <br/>
-            Last Name<input type="text" id="lname_txt" name="lname_txt"/><br/>
-            User Name<input type="text" id="uname_txt" name="uname_txt"/><br/>
-            Password<input type="password" id="pass1_txt" name="pass1_txt"/><br/>
-			Re-Password<input type="password" id="pass2_txt" name="pass2_txt"/><br/>
-			Email<input type="email" id="email_txt" name="email_txt"/><br/>
-			Country<input type="text" id="country_txt" name="country_txt"/><br/>
-			Quote <br/>
-			<textarea rows="4" cols="50" name="quote" id="quote">
-			TYPE YOUR QUOTE
-			</textarea>	<br/>
-            
-    		<input type="file" name="photo" size="2000000" accept="image/gif, image/jpeg, image/x-ms-bmp, image/x-png" size="26"><br/>
 
-            <input type="submit" value="Register"/>
 
+	    <h1>register</h1></br>
+		<form id="myform"  name="myform" onsubmit="submitValidation()" 
+			action="register_process.php" method="post" enctype="multipart/form-data">
+			<div class="input-group subtask-text-input" >
+ 				<input type="text" class="form-control" placeholder="first name" aria-describedby="basic-addon1"
+				id="fname_txt" name="fname_txt" onkeyup="validateFirstName()" >
+			</div>
+			<div class="input-group subtask-text-input">
+ 				<input type="text" class="form-control" placeholder="last name" aria-describedby="basic-addon1"
+				id="lname_txt" name="lname_txt" onkeyup="validateLastName()">
+			</div>
+			<div class="input-group subtask-text-input">
+ 				<input type="text" class="form-control" placeholder="user name" aria-describedby="basic-addon1"
+				id="uname_txt" name="uname_txt" onkeyup="validateUserName()">
+			</div>
+			<div class="input-group subtask-text-input">
+ 				<input type="password" class="form-control" placeholder="password" aria-describedby="basic-addon1"
+				id="pass1_txt" name="pass1_txt" onkeyup="validatePassword()">
+			</div>
+			<div class="input-group subtask-text-input">
+ 				<input type="password" class="form-control" placeholder="re-password" aria-describedby="basic-addon1"
+				id="pass2_txt" name="pass2_txt" onkeyup="validatePassword()">
+			</div>
+			<div class="input-group subtask-text-input">
+ 				<input type="email" class="form-control" placeholder="email" aria-describedby="basic-addon1"
+				id="email_txt" name="email_txt" onkeyup="validateEmail()">
+			</div>
+
+			<div class="dropdown">
+			  <button class="btn btn-default dropdown-toggle" type="button" id="country_dropdown_button"
+				 name="country_dropdown_button" data-toggle="dropdown" aria-expanded="true">
+			    Country
+			    <span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu dropdown-scrollbar" role="menu" aria-labelledby="dropdownMenu1" id="country_dropdown"
+				 name="country_dropdown" >
+			  </ul>
+			</div>
+
+			<div class="input-group subtask-text-input">
+ 				<input type="text" class="form-control" placeholder="type your quote here" aria-describedby="basic-addon1"
+				id="quote" name="quote">
+			</div>
+			<div class="input-group">
+  				<span class="input-group-addon" id="sizing-addon2" >upload photo</span>
+				<span class="btn btn-default btn-file">
+				    browse <input type="file" id="browse_btn" name="photo"  
+					accept="image/gif, image/jpeg, image/x-ms-bmp, image/x-png">
+				</span>
+			</div>
+			</br>
+			    
+	         	<input class="btn btn-primary" type="submit" value="Register" id="submit_btn"/>
+			<input type="text" id='country_hidden' name='country_hidden' hidden> 
 		</form>
+		<script type='text/javascript'  src='script.js' > </script>
+
 	</body>
 </html>

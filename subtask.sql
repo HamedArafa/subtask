@@ -32,12 +32,12 @@ CREATE TABLE IF NOT EXISTS `users` (
   `last_name` varchar(20) NOT NULL,
   `user_name` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL,
-  `email` varchar(20) NOT NULL,
+  `email` varchar(30) NOT NULL,
   `country` varchar(20) NOT NULL,
-  `quote` varchar(100) NOT NULL,
+  `quote` varchar(300) NOT NULL,
   `score` int(11) NOT NULL,
   `member_since` date NOT NULL,
-  `image` varchar(25) DEFAULT NULL
+  `image` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
