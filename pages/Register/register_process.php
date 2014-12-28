@@ -31,7 +31,6 @@
     $filePath = $uploadDir.$fileName;
     $filePath= str_replace(' ','',$filePath);	
     $result = move_uploaded_file($tmpName, $filePath);
-   echo "Country: {$country}";
 
 	if (!$result) {
 		echo "Error uploading file";
