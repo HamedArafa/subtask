@@ -1,0 +1,2 @@
+integer t, 1<=t<=20 followed by t lines
+each line consists of integer n, 1<=n<=20
