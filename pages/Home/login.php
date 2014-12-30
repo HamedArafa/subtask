@@ -24,7 +24,7 @@
 		if($row["password"]==$_POST["pass_txt"])
 		{
 			$_SESSION["loggedin"]=true;
-			$_SESSION["current_user_name"]=$row["first_name"];
+			$_SESSION["current_user_name"]=$row["user_name"];
 			mysqli_close($con);            
 	
 		}

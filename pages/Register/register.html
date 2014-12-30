@@ -78,9 +78,9 @@
 			    </div>
 			 </div>
 
-
-			<div class="form-group" >
-			    <label class="col-sm-1 control-label">Email</label>
+	
+				<div class="form-group" >
+					<label class="col-sm-1 control-label">Email</label>
 			    <div class="col-sm-3">
 
 			      <input style="width:200" type="email"   class="form-control" id="email_txt" name="email_txt"   placeholder="email@domain.com"
@@ -88,25 +88,15 @@
 			      </input >
 			    </div>
 			 </div>
-
-
-
-
-
-
-
-
-
-		<div class="btn-group">
-				<select  id="countries" class="btn btn-default dropdown-toggle" >
+			<div class="btn-group">
+				<select  id="country" class="btn btn-default dropdown-toggle" name ='country'>
 				</select>
-		</div>
+			</div>
          <br/><br/>
 
 
-			<textarea rows="4" cols="50" id="quote" name="quote"  float="left">
-				type your quote here
-			</textarea>  <br/>
+			<textarea rows="4" cols="50" id="quote" name="quote"  float="left" style="color:black;" 
+			placeholder='  type your quote here'></textarea>  <br/>
 
 
 
@@ -120,7 +110,7 @@
 			</div>
 			</br>
 			    
-	         	<input class="btn btn-primary" type="submit" value="Register" id="submit_btn"/>
+	    <input class="btn btn-primary" type="submit" value="Register" id="submit_btn"/>
 			<input type="text" id='country_hidden' name='country_hidden' hidden> 
 		</form>
 		<script type='text/javascript'  src='register.js' > </script>
