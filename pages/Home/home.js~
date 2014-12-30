@@ -1,7 +1,0 @@
-var registerBtn=document.getElementById("register_btn");
-alert(registerBtn);
-function registerationRedirect()
-{
-	console.log("bate5a");
-	window.location="../Register/register.html";
-}
