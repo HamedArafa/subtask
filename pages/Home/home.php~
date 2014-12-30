@@ -9,6 +9,9 @@
 		<link rel='stylesheet' href='../../bower_components/bootstrap/dist/css/bootstrap.min.css'>
 		<link rel='stylesheet' href='../../globalstyling.css'>
 
+		<header>
+		</header>
+
 	</head>
 	<body>
 

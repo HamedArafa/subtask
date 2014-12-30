@@ -11,6 +11,7 @@ var countryDropdownButton =document.getElementById("country_dropdown_button");
 var countryHiddenText=document.getElementById("country_hidden");
 
 var country=null;
+console.log(country+" "+quote);
 var browseBtn=document.getElementById("browse_btn");
 (function addCountriesToList(){
 	(function readCountriesFile()

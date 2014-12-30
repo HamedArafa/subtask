@@ -44,6 +44,6 @@ body {
 div.problem-discription{
 	width:700px;
 	height:200px;
-	background:#D8D6D6;
+	background:#B3B0B0;
 
 }
