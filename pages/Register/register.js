@@ -1,3 +1,23 @@
+(function write_countries(){
+
+    var dom = document.getElementById("countries");
+
+	var arr=["January","February","March","April","May","June","July","August","September","October","November","December"];
+	
+	for(var i=0;i<arr.length;i++){
+		 var option = document.createElement("option");
+   		 option.text = arr[i];
+   		 option.value=arr[i];
+    	 dom.add(option);
+	}
+
+
+}) ;
+ 
+
+
+
+var dom = document.getElementById("countries");
 var fName= document.getElementById("fname_txt");
 var lName=document.getElementById("lname_txt");
 var uName=document.getElementById ("uname_txt");
@@ -9,7 +29,7 @@ var quote=document.getElementById ("quote");
 var countryDropdown=document.getElementById("country_dropdown");
 var countryDropdownButton =document.getElementById("country_dropdown_button");
 var countryHiddenText=document.getElementById("country_hidden");
-
+//console.log(countryDropdownButton)
 var country=null;
 var browseBtn=document.getElementById("browse_btn");
 (function addCountriesToList(){
@@ -28,7 +48,10 @@ var browseBtn=document.getElementById("browse_btn");
 						while (countryList[i]!=="\n"){
 							cont+=countryList[i++];
 						}
-						countryDropdown.appendChild( createLi(cont) );
+						 var option = document.createElement("option");
+				   		 option.text = cont;
+				   		 option.value= cont;
+				    	 dom.add(option);
 						i++;
 					}
 				}
@@ -37,6 +60,7 @@ var browseBtn=document.getElementById("browse_btn");
 		reader.send(null);
 	})();
 })()
+
 function createLi(value)
 {
 	var a=document.createElement("a");
@@ -149,13 +173,20 @@ function storeCountry(value)
 }
 function submitValidation()
 {
-	console.log("7amada");
-	if (validateFirstName()===false||validateLastName()===false||validateUserName()===false||validatePassword()===false
-	||validateEmail()===false || country===null || browseBtn.value===""){
+	var msg="";
+	if (validateFirstName()===false)msg+="invalid first name\n";
+	if(validateLastName()===false)msg+="invalid last name\n";
+	if(validateUserName()===false)msg+="invalid user name\n";
+	if(validatePassword()===false)msg+="invalid password\n";
+	if(validateEmail()===false)msg+="invalid email\n";
+	if(browseBtn.value==="")msg+="please uplod photo\n";
+	if(msg!="")
+	{
 		event.preventDefault();
+		alert(msg)
 		return false;
 	}
+
 	//console.log("Country:"+ countryDropdownButton.value);
 	return true;
 }
-

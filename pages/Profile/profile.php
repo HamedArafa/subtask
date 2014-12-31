@@ -5,7 +5,8 @@
 		<link rel='stylesheet' href='../../bower_components/bootstrap/dist/css/bootstrap.min.css'>
 		<link rel='stylesheet' href='../../globalstyling.css'>
 	</head>
-	<body>
+	<body style="  background-color: #00231F;
+    background-repeat: no-repeat;background-size: 1400px 700px;   ">
 		<?PHP
 		    session_start();
 			$hostname = "localhost"; // usually is localhost, but if not sure, check with your hosting company, if you are with webune 			leave as localhost 

@@ -4,24 +4,19 @@
 <!DOCTYPE html>
 <html>
 	<head>
-<!-- TRY  start
--->
 
 <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
-
-<!-- TRY  end
--->
-
-
-		<script type='text/javascript' src='../../bower_components/jquery/dist/jquery.js'></script>		
-		<script type='text/javascript' src='../../bower_components/bootstrap/dist/js/bootstrap.js'></script>
-		<link rel='stylesheet' href='../../bower_components/bootstrap/dist/css/bootstrap.min.css'>
-		<link rel='stylesheet' href='../../globalstyling.css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script>
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    
+	<script type='text/javascript' src='../../bower_components/jquery/dist/jquery.js'></script>		
+	<script type='text/javascript' src='../../bower_components/bootstrap/dist/js/bootstrap.js'></script>
+	<link rel='stylesheet' href='../../bower_components/bootstrap/dist/css/bootstrap.min.css'>
+	<link rel='stylesheet' href='../../globalstyling.css'>
 
 	</head>
 	<body style="background-image: url('monkey.png');   background-color: #00231F;
@@ -30,7 +25,8 @@
       <?php
          if(isset($_SESSION["loggedin"])){
             ?>
-             <input type="button" class="btn btn-default" value="log out" style="color:#02CEC0; float: right;" />
+             <input type="button" class="btn btn-default" value="log out" style="color:#02CEC0; float: right;"
+             onclick='document.location.href= "http://127.0.0.1/subtask/pages/Home/logout.php" ' />
              <br/>
             <?php
          }
@@ -53,8 +49,7 @@
 
 
 	     <!--login form  OR welcome and take test-->
-	     <div>
-            
+	     <div>         
             <?php
  			if(isset($_SESSION["home_alert_error"])){
  				unset($_SESSION["home_alert_error"]);

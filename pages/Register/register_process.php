@@ -50,6 +50,7 @@
 
 	if ($conn->query($sql) === TRUE) {
 	    echo "New record created successfully";
+	    header("Location:/subtask/pages/Home/home.php");
 	} else {
 	    echo "Error: " . $sql . "<br>" . $conn->error;
 	}

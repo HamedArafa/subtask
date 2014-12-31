@@ -1,59 +1,116 @@
 <!DOCTYPE html>
 <html>
 	<head>
-
 		<script type='text/javascript' src='../../bower_components/jquery/dist/jquery.js'></script>		
 		<script type='text/javascript' src='../../bower_components/bootstrap/dist/js/bootstrap.js'></script>
+
 		<link rel='stylesheet' href='../../bower_components/bootstrap/dist/css/bootstrap.min.css'>
 		<link rel='stylesheet' href='../../globalstyling.css'>
 	</head>
 
-	<body>
+	<body style="s  background-color: #00231F;
+    background-repeat: no-repeat;background-size: 1400px 700px;   " >
+
+		<h1 style="text-align: center;color:#02CEC0;">Registration Form</h1>
+		<form class="form-horizontal" id="myform"  name="myform" onsubmit="submitValidation()" 
+			action="register_process.php" method="post" enctype="multipart/form-data" style="color:white">
 
 
-	    <h1>register</h1></br>
-		<form id="myform"  name="myform" onsubmit="submitValidation()" 
-			action="register_process.php" method="post" enctype="multipart/form-data">
-			<div class="input-group subtask-text-input" >
- 				<input type="text" class="form-control" placeholder="first name" aria-describedby="basic-addon1"
-				id="fname_txt" name="fname_txt" onkeyup="validateFirstName()" >
-			</div>
-			<div class="input-group subtask-text-input">
- 				<input type="text" class="form-control" placeholder="last name" aria-describedby="basic-addon1"
-				id="lname_txt" name="lname_txt" onkeyup="validateLastName()">
-			</div>
-			<div class="input-group subtask-text-input">
- 				<input type="text" class="form-control" placeholder="user name" aria-describedby="basic-addon1"
-				id="uname_txt" name="uname_txt" onkeyup="validateUserName()">
-			</div>
-			<div class="input-group subtask-text-input">
- 				<input type="password" class="form-control" placeholder="password" aria-describedby="basic-addon1"
-				id="pass1_txt" name="pass1_txt" onkeyup="validatePassword()">
-			</div>
-			<div class="input-group subtask-text-input">
- 				<input type="password" class="form-control" placeholder="re-password" aria-describedby="basic-addon1"
-				id="pass2_txt" name="pass2_txt" onkeyup="validatePassword()">
-			</div>
-			<div class="input-group subtask-text-input">
- 				<input type="email" class="form-control" placeholder="email" aria-describedby="basic-addon1"
-				id="email_txt" name="email_txt" onkeyup="validateEmail()">
-			</div>
+			<div class="form-group" >
+			    <label class="col-sm-1 control-label">First Name</label>
+			    <div class="col-sm-3">
 
-			<div class="dropdown">
-			  <button class="btn btn-default dropdown-toggle" type="button" id="country_dropdown_button"
-				 name="country_dropdown_button" data-toggle="dropdown" aria-expanded="true">
-			    Country
-			    <span class="caret"></span>
-			  </button>
-			  <ul class="dropdown-menu dropdown-scrollbar" role="menu" aria-labelledby="dropdownMenu1" id="country_dropdown"
-				 name="country_dropdown" >
-			  </ul>
-			</div>
+			      <input style="width:200" type="text"   class="form-control" id="fname_txt" name="fname_txt" placeholder="first name" 
+			      		onkeyup="validateFirstName();">
+			      </input >
+			    </div>
+			  </div>
 
-			<div class="input-group subtask-text-input">
- 				<input type="text" class="form-control" placeholder="type your quote here" aria-describedby="basic-addon1"
-				id="quote" name="quote">
-			</div>
+
+
+
+
+			<div class="form-group" >
+			    <label class="col-sm-1 control-label">Last Name</label>
+			    <div class="col-sm-3">
+
+			      <input style="width:200" type="text"   class="form-control" id="lname_txt" name="lname_txt" placeholder="last name"
+			      		onkeyup="validateLastName();">
+			      </input >
+			    </div>
+			  </div>
+
+
+
+
+			<div class="form-group" >
+			    <label class="col-sm-1 control-label">User Name</label>
+			    <div class="col-sm-3">
+
+			      <input style="width:200" type="text"   class="form-control" id="uname_txt" name="uname_txt" placeholder="user name"
+			      		onkeyup="validateUserName()">
+			      </input >
+			    </div>
+			  </div>
+
+
+
+			<div class="form-group" >
+			    <label class="col-sm-1 control-label">Password</label>
+			    <div class="col-sm-3">
+
+			      <input style="width:200" type="password"   class="form-control" id="pass1_txt" name="pass1_txt"  placeholder="*****"
+			      		onkeyup="validatePassword()">
+			      </input >
+			    </div>
+			 </div>
+
+
+
+
+			<div class="form-group" >
+			    <label class="col-sm-1 control-label">Re-Password</label>
+			    <div class="col-sm-3">
+
+			      <input style="width:200" type="password"   class="form-control" id="pass2_txt" name="pass2_txt"  placeholder="*****"
+			      		onkeyup="validatePassword()">
+			      </input >
+			    </div>
+			 </div>
+
+
+			<div class="form-group" >
+			    <label class="col-sm-1 control-label">Email</label>
+			    <div class="col-sm-3">
+
+			      <input style="width:200" type="email"   class="form-control" id="email_txt" name="email_txt"   placeholder="email@domain.com"
+			      		onkeyup="validateEmail()">
+			      </input >
+			    </div>
+			 </div>
+
+
+
+
+
+
+
+
+
+		<div class="btn-group">
+				<select  id="countries" class="btn btn-default dropdown-toggle" >
+				</select>
+		</div>
+         <br/><br/>
+
+
+			<textarea rows="4" cols="50" id="quote" name="quote"  float="left">
+				type your quote here
+			</textarea>  <br/>
+
+
+
+
 			<div class="input-group">
   				<span class="input-group-addon" id="sizing-addon2" >upload photo</span>
 				<span class="btn btn-default btn-file">
