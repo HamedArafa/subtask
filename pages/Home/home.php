@@ -98,10 +98,8 @@
 				<input type="button" class="btn btn-info" value="Take Test !" style="color:#000000;" 
                  onclick='document.location.href= "http://127.0.0.1/subtask/pages/Practice/practice.php" '/>
 
-=======
-						</br>
-						<input type="button" class="btn btn-info" value="Practice !" style="color:#000000;" />
-	
+
+			
 
 	        	<?php
 	        }

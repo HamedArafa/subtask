@@ -1,3 +1,10 @@
+<?php
+
+		session_start();
+
+	echo $_SESSION["current_user_name"];
+
+?>
 <html>
 	<head>
 		<script type='text/javascript' src='../../bower_components/jquery/dist/jquery.js'></script>		
@@ -5,7 +12,7 @@
 		<link rel='stylesheet' href='../../bower_components/bootstrap/dist/css/bootstrap.min.css'>
 		<link rel='stylesheet' href='../../globalstyling.css'>
 	</head>
-	<body>
+	<body style="background-color: #00231F;">
 	<?php
 		function readMyFile ($fileName)
 		{
@@ -16,13 +23,22 @@
 	?>
 
 	<?php
-		session_start();
 		$conn= mysqli_connect("localhost","root","","subtask");
 		if (mysqli_connect_errno()){
 				echo "Database failure";
-		}
+		}		
+
+		//$_SESSION["current_user_name"]="nada"; //*******************************
+
+
+       echo $_SESSION["current_user_name"];
 		$currentUser=$_SESSION["current_user_name"];
-		$query= " select * from users where user_name = '$currentUser' ";
+
+
+
+
+
+		$query= " SELECT * FROM users WHERE user_name = \"$currentUser\" ";
 		$queryResult= mysqli_query($conn,$query);
 		if ($queryResult==false){
 				echo " Error";
@@ -42,17 +58,35 @@
 		$input=readMyFile($problemDirectory . "/input.txt");
 		$output=readMyFile($problemDirectory . "/output.txt");
 		$notes=readMyFile($problemDirectory . "/notes.txt");		
-		echo $disc ;
+	
+	    echo "
+	    <h1 style='color:black;'>FIBONACCI</h1>
+        <div class= 'problem-discription' >
+              <br/>
+        	  &nbsp;<span style=' font-weight:bold ;font-style:italic;'>$disc</span> <br/><br/>
+              &nbsp;$input <br/><br/>
+              &nbsp;$output <br/><br/>
+              &nbsp;$notes <br/><br/>
+        </div>
 
-	?>
-		<div class= "problem-discription">
-
-		</div>
+	    " ;
 		
+              		
+
+		?>
 		<div class="form-group">
-			<textarea class="form-control subtask-input-code" rows="5" id="comment"></textarea>
+			<textarea class="form-control subtask-input-code" rows="5" id="comment">int main(){
+	"type your code"
+	return 0;
+}
+		</textarea>
 		</div>
-		<input type="button" class="btn btn-primary" value="submit" name="submit_btn" id="submit_btn" />
+
+
+    <form action="http://127.0.0.1/subtask/pages/practice/practice_next.php" method="post">
+		<button type="submit" class="btn btn-primary" value="submit" name="submit_btn" id="submit_btn">submit</button>
+    </form>
+
 
 	</body>
 </html>

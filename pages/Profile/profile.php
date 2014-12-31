@@ -1,3 +1,6 @@
+<?PHP
+		    session_start();
+?>
 <html>
 	<head>
 		<script type='text/javascript' src='../../bower_components/jquery/dist/jquery.js'></script>		

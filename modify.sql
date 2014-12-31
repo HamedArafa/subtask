@@ -1,4 +1,4 @@
-drop talbe users;
+drop table users;
 create table problems (
 	prob_id int not null primary key,
 	prob_name varchar (20) not null,
