@@ -84,6 +84,9 @@
 				-->
 				<br/>
 			    <button type="submit" class="btn btn-default">Log in</button>
+			    <input type="button" class="btn btn-default" value="register" 
+                 onclick='document.location.href= "http://127.0.0.1/subtask/pages/Register/Register.html" ' />
+
 			  </form> 
 
                <?php
