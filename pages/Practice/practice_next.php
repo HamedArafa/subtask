@@ -20,7 +20,7 @@
 		$currentProblem = $row[ 'prob_id' ];
 
         $currentProblem++;
-
+		echo "current problem: " . $currentProblem;
         $query= "UPDATE users SET prob_id=$currentProblem where user_name = \"$currentUser\" ";
         
 		$queryResult= mysqli_query($conn,$query);

@@ -31,22 +31,22 @@
 		//$_SESSION["current_user_name"]="nada"; //*******************************
 
 
-       echo $_SESSION["current_user_name"];
+    echo $_SESSION["current_user_name"];
 		$currentUser=$_SESSION["current_user_name"];
 
 
 
 
-
-		$query= " SELECT * FROM users WHERE user_name = \"$currentUser\" ";
+	
+		$query= " SELECT * FROM users WHERE user_name = '$currentUser' ";
 		$queryResult= mysqli_query($conn,$query);
 		if ($queryResult==false){
 				echo " Error";
 		} 
 		$row= mysqli_fetch_array($queryResult);
 		$currentProblem = $row[ 'prob_id' ];
-		$currentProblemName = $row[ 'prob_name' ];
-		echo $currentProblem ;
+		echo "current problem:" . $currentProblem ;
+
 		$queryResult=mysqli_query($conn,"select * from problems where prob_id= '$currentProblem' ");
 		if ($queryResult==false){
 				echo "Error";
@@ -76,6 +76,9 @@
 		?>
 		<div class="form-group">
 			<textarea class="form-control subtask-input-code" rows="5" id="comment">int main(){
+	freopen("in.in","r",stdin);
+	freopen("out.out","w",stdout);
+	
 	"type your code"
 	return 0;
 }
@@ -83,7 +86,7 @@
 		</div>
 
 
-    <form action="http://127.0.0.1/subtask/pages/practice/practice_next.php" method="post">
+    <form action="http://127.0.0.1/subtask/pages/Practice/practice_next.php" method="post">
 		<button type="submit" class="btn btn-primary" value="submit" name="submit_btn" id="submit_btn">submit</button>
     </form>
 
