@@ -45,6 +45,7 @@
 		} 
 		$row= mysqli_fetch_array($queryResult);
 		$currentProblem = $row[ 'prob_id' ];
+		$currentProblemName = $row[ 'prob_name' ];
 		echo $currentProblem ;
 		$queryResult=mysqli_query($conn,"select * from problems where prob_id= '$currentProblem' ");
 		if ($queryResult==false){
@@ -60,7 +61,7 @@
 		$notes=readMyFile($problemDirectory . "/notes.txt");		
 	
 	    echo "
-	    <h1 style='color:black;'>FIBONACCI</h1>
+	    <h1 style='color:black;'>$currentProblemName</h1>
         <div class= 'problem-discription' >
               <br/>
         	  &nbsp;<span style=' font-weight:bold ;font-style:italic;'>$disc</span> <br/><br/>
@@ -71,8 +72,7 @@
 
 	    " ;
 		
-              		
-
+        
 		?>
 		<div class="form-group">
 			<textarea class="form-control subtask-input-code" rows="5" id="comment">int main(){
