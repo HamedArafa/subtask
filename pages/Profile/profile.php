@@ -11,7 +11,6 @@
 	<body style=" background-image: url('monkey.png'); background-color: #00231F;
 			background-repeat: no-repeat;background-size: 1400px 700px;   ">
 		<?PHP
-		    session_start();
 			$hostname = "localhost"; // usually is localhost, but if not sure, check with your hosting company, if you are with webune 			leave as localhost 
 			$db_user = "root"; // change to your database password 
 			$db_password = ""; // change to your database password 
@@ -26,7 +25,7 @@
 			$current_user_name= $_SESSION["current_user_name"];
 	
 
-			$query = "SELECT * FROM users where user_name='{$current_user_name}' ";
+			$query = "SELECT * FROM users where user_name=\"$current_user_name\" ";
 
 			$result = mysql_query($query) or die(mysql_error());
 			while($row = mysql_fetch_array($result))

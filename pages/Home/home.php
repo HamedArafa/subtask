@@ -91,8 +91,11 @@
 	        else{
 	        	
 	        ?>
-                 <span  style=" font-weight: 500; font-size:17px; color:white;"> welcome 
-                 	<?php     echo"$_SESSION[current_user_name]"  ?> 
+                 <span  style=" font-weight: 500; font-size:17px; color:white;" > 
+                 	welcome 
+                 	<?php    
+                 	 echo" <a href='http://127.0.0.1/subtask/pages/Profile/profile.php'>$_SESSION[current_user_name]</a>";
+                 	 ?> 
                  </span></br>
  
 				<input type="button" class="btn btn-info" value="Take Test !" style="color:#000000;" 
