@@ -28,8 +28,7 @@
 			$query = "SELECT * FROM users where user_name=\"$current_user_name\" ";
 
 			$result = mysql_query($query) or die(mysql_error());
-			while($row = mysql_fetch_array($result))
-			{    
+			$row = mysql_fetch_array($result);
 	       		 echo "<div>" . $row['first_name'] . "</div>";
 			 
 
@@ -48,7 +47,6 @@
 			     echo "member since: ".$row['member_since'] . "<br/>";
 			     echo "score: ".$row['score'] . "<br/>";
 			     echo "</div>";
-			}
 		?>
 	</body>
 
