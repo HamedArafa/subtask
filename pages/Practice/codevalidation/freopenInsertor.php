@@ -8,7 +8,8 @@
 					$ch=fgetc($myFile);
 					fwrite($newFile,$ch);
 					if ($ch=='{' && $flag==false){
-							fwrite($newFile,'freopen("clientOutput.out","w",stdout);');
+							fwrite($newFile,'freopen("clientOutput.out","w",stdout); freopen("read.in","r",stdin);');
+					
 							$flag=true;
 					}
 			}

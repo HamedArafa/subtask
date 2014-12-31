@@ -1,0 +1,2 @@
+Integer t, 1<=t<=1000 which is the number of test cases followed by t lines
+each of them consists of integer n, 1<=n<10^6

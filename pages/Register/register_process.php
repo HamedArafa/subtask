@@ -4,11 +4,12 @@
    $uname=$_POST["uname_txt"];
    $pass1=$_POST["pass1_txt"];
    $email=$_POST["email_txt"]; 
-   $country=$_POST["country_hidden"];
+   $country=$_POST["country"];
+   echo $country;
    $quote=$_POST["quote"];
    //handle image uploading
     
-    $servername = "localhost";
+  $servername = "localhost";
 	$username = "root";
 	$password = "";
 	$dbname = "subtask";
@@ -30,8 +31,12 @@
     $fileType = $_FILES['photo']['type'];
     $filePath = $uploadDir.$fileName;
     $filePath= str_replace(' ','',$filePath);	
+    echo $filePath . "</br>" . $tmpName ."</br>";	
+		
+  
+  
     $result = move_uploaded_file($tmpName, $filePath);
-
+		
 	if (!$result) {
 		echo "Error uploading file";
 		exit;
@@ -39,13 +44,14 @@
 	if(!get_magic_quotes_gpc())
 	{
 	    $fileName = addslashes($fileName);
-            $filePath = addslashes($filePath);
+      $filePath = addslashes($filePath);
 	    $quote= addslashes($quote);
 	}
 	// finish image upload settings
-	$sql = "INSERT INTO users(first_name,last_name,user_name,password,email,country,quote,score,member_since,image)
+	
+	$sql = "INSERT INTO users(first_name,last_name,user_name,password,email,country,quote,score,member_since,image,prob_id)
 	      VALUES ('{$fname}','{$lname}','{$uname}','{$pass1}','{$email}','{$country}','{$quote}' ,0,CURRENT_TIMESTAMP, 
-		'{$filePath}' )";
+		'{$filePath}', 0 )";
 
 
 	if ($conn->query($sql) === TRUE) {
