@@ -78,10 +78,7 @@
 			      <input type="password" class="form-control" id="pwd" placeholder="Enter password" style="width:400px"id="pass_txt" name="pass_txt">
 			    </div>
 
-			  <!--  <div class="checkbox" >
-			      <label style="color:#FFFFFF;"><input type="checkbox" name="remember" id="remember"> Remember me</label>
-			    </div>
-				-->
+		
 				<br/>
 			    <button type="submit" class="btn btn-default">Log in</button>
 			    <input type="button" class="btn btn-default" value="register" 
@@ -98,7 +95,8 @@
                  	<?php     echo"$_SESSION[current_user_name]"  ?> 
                  </span></br>
  
-				<input type="button" class="btn btn-info" value="Take Test !" style="color:#000000;" />
+				<input type="button" class="btn btn-info" value="Take Test !" style="color:#000000;" 
+                 onclick='document.location.href= "http://127.0.0.1/subtask/pages/Practice/practice.php" '/>
 
 
 	        	<?php
