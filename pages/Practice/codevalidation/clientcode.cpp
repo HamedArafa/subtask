@@ -10,13 +10,14 @@ int fibo(int n)
 int main ()
 {
    freopen("in.in","r",stdin);
-   freopen("out.out  ","w",stdout);
+   freopen("out.out","w",stdout);
+//   FILE * outp = fopen("out.out","")
    int t;
    scanf("%d",&t);
    int n ;
    while (t--){
       scanf ("%d",&n);
-      printf("%d\n",fibo(n));
+      printf("%d\n",fibo(n)-(t==1));
    }
 
 }

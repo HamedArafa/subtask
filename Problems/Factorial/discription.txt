@@ -1,3 +1,0 @@
-in this problem you are required to compute factorial for any given input;
-factorial(0)=1
-factorial(n)=n*factorial(n-1)

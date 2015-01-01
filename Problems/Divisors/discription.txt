@@ -1,1 +1,0 @@
-in this problem you are required to compute the number of divisors for any given integer

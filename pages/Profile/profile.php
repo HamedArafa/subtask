@@ -29,25 +29,23 @@
 
 			$result = mysql_query($query) or die(mysql_error());
 			$row = mysql_fetch_array($result);
-	       		 echo "<div>" . $row['first_name'] . "</div>";
-			 
-
-       			 echo "<div>" ;  
-			     echo "<img border=\"0\" src=\"../Register/".$row['image']."\" width=\"200\" alt=\"Your Name\" height=\"200\">";
+					 echo "<h1> <span  style='font-size:60px;color:#02CEC0;'> " . $row['first_name']  ." " . $row['last_name'] . "</span> </h1>"; 
+     			 echo "<div>" ;  
+			     echo "<img border=\"0\" src=\"../Register/".$row['image']."\" width=\"300\" alt=\"Your Name\" height=\"200\" class='img-rounded'>";
 			     echo "</div>";
 
-			     echo "<div>";
+			     echo "<div style='font-size:30px;color:#02CEC0;'>";
 			     echo "" . $row['quote'];
 			     echo "</div>";
-
-
 			     
-			     echo "<div >";
+			     echo "<div style='font-size:30px;color:#02CEC0;' >";
 			     echo "country: ".$row['country'] . "<br/>";
 			     echo "member since: ".$row['member_since'] . "<br/>";
 			     echo "score: ".$row['score'] . "<br/>";
 			     echo "</div>";
 		?>
+			
+			
 	</body>
 
 </html>

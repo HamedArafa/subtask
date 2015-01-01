@@ -12,19 +12,27 @@
 		
 	function automaticJudge($fileName)
 	{
+			$r=-1;
 			if (cppCompiler($fileName)==false){
-				echo "compilation Error";
-				return 2;
+				echo "Compilation Error";
+					$r= 2;
 			}
 			executeFile("clientexecutable.o");
-			if (validateFiles("out.out","correctoutput.out")==true){
-					echo "correct solution";
-					return 0;
+			if (validateFiles("out.out","correctoutput.out")==true && $r==-1){
+					echo "Correct solution";
+					$r= 0;
 			}
 			else{
-					echo "wrong answer";
-					return 1;
+				if ($r==-1){
+					echo "Wrong answer";
+					$r= 1;
+				}
 			}
+			return $r ; 
+			unlink("clientexecutable.o");
+			unlink("out.out");
+//			shell_exec("rm clientexecutable.o");
+	//		shell_exec("rm out.out");
 	}
-		automaticJudge("clientcode.cpp");
+	automaticJudge("clientcode.cpp");
 ?>

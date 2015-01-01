@@ -96,9 +96,9 @@
                  	<?php    
                  	 echo" <a href='http://127.0.0.1/subtask/pages/Profile/profile.php'>$_SESSION[current_user_name]</a>";
                  	 ?> 
-                 </span></br>
- 
-				<input type="button" class="btn btn-info" value="Take Test !" style="color:#000000;" 
+                 </span></br></br>
+	
+								<input type="button" class="btn btn-info" value="Practice !" style="color:#000000;" 
                  onclick='document.location.href= "http://127.0.0.1/subtask/pages/Practice/practice.php" '/>
 
 

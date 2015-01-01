@@ -1,13 +1,16 @@
 <?php
 	function validateFiles($client,$correct)
 	{	
+	//	echo $client ." ". $correct . "</br>";
 		$clientFile=fopen($client,"r");
-		$correctFile=fopen($correct,"r");
+//		echo "client file size:" . filesize($client) ." "	;
+//		echo "correct file size:" .filesize($correct);
+		$correctFile=fopen($correct,"r");		
 		while (feof($clientFile)==false && feof($correctFile)==false  )
 		{
 				$str1=fgets($clientFile);
 				$str2=fgets($correctFile);
-				echo "first ".  $str1 . "second " . $str2 . "<br>";
+				echo "user output ".  $str1 . "correct output " . $str2 . "<br>";
 				if ($str1!=$str2){
 						return false;
 				}
@@ -16,12 +19,5 @@
 				return true;
 		}
 		return false;
-	}
-	$ans=	validateFiles("test1.txt","test2.txt");
-	if ($ans==false){
-			echo "Files don't match";
-	}
-	else{
-			echo "Files match";
 	}
 ?>

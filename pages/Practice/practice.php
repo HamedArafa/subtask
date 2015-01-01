@@ -55,7 +55,7 @@
 		
 		$problemDirectory= "../../" . $row['prob_dir'];
 
-		$disc= readMyFile($problemDirectory . "/discription.txt" );
+		$disc= readMyFile($problemDirectory . "/description.txt" );
 		$input=readMyFile($problemDirectory . "/input.txt");
 		$output=readMyFile($problemDirectory . "/output.txt");
 		$notes=readMyFile($problemDirectory . "/notes.txt");		

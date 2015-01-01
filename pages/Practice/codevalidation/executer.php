@@ -3,5 +3,4 @@
 	{
 			shell_exec("./{$fileName}");				
 	}
-	executeFile("clientExecutable.o");
 ?>
