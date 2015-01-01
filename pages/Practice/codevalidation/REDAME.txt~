@@ -1,6 +1,0 @@
-once the server recieves the cpp file
-inserts freopen using freopenInsertor.php this outputs a new file newCode.cpp
-compiles newCode.cpp using cppCompiler.php .. returns false if its compile error otherwise true and generates clientExecutable.o
-execute the clientExecutble and produce clientOutput.out //pending
-validate clientOutput.out and the correct testcase file from ../test cases
-remove all generated files
