@@ -82,7 +82,7 @@
 		</div>
 
 
-    <form action="http://127.0.0.1/subtask/pages/Practice/practice_next.php" method="post">
+    <form action="practice_next.php" method="post">
 		<button type="submit" class="btn btn-primary" value="submit" name="submit_btn" id="submit_btn">submit</button>
     </form>
 
