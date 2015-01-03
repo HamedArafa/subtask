@@ -14,19 +14,18 @@
 	{
 			$r=-1;
 			if (cppCompiler($fileName)==false){
-				echo "Compilation Error";
+	//			echo "Compilation Error";
 					$r= 2;
-					exit();
 			}
-			executeFile("clientexecutable.o");
-			if (validateFiles("codevalidation/out.out","codevalidation/correctoutput.out")==true && $r==-1){
-					echo "Correct solution";
-					$r= 0;
-			}
-			else{
-				if ($r==-1){
-					echo "Wrong answer";
-					$r= 1;
+			if ($r==-1){
+				executeFile("clientexecutable.o");
+				if ( validateFiles("codevalidation/out.out","codevalidation/correctoutput.out")==true){
+		//				echo "Correct solution";
+						$r= 0;
+				}
+				else{
+						$r= 1;
+				//		echo"wrong answer";
 				}
 			}
 			return $r ; 
