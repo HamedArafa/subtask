@@ -1,6 +1,5 @@
 <?php
 	session_start();
-
 ?>
 <html>
 	<head>
@@ -30,7 +29,6 @@
 
     //echo $_SESSION["current_user_name"];
 		$currentUser=$_SESSION["current_user_name"];
-
 
 		$query= " SELECT * FROM users WHERE user_name = '$currentUser' ";
 		$queryResult= mysqli_query($conn,$query);
@@ -70,8 +68,10 @@
 		
         
 		?>
+    <form action="practice_next.php" method="post">
+
 		<div class="form-group">
-			<textarea class="form-control subtask-input-code" rows="5" id="comment">int main(){
+			<textarea class="form-control subtask-input-code" rows="5" id="comment" name='code_txt'>int main(){
 	freopen("in.in","r",stdin);
 	freopen("out.out","w",stdout);
 	
@@ -82,7 +82,6 @@
 		</div>
 
 
-    <form action="practice_next.php" method="post">
 		<button type="submit" class="btn btn-primary" value="submit" name="submit_btn" id="submit_btn">submit</button>
     </form>
 

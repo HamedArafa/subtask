@@ -16,9 +16,10 @@
 			if (cppCompiler($fileName)==false){
 				echo "Compilation Error";
 					$r= 2;
+					exit();
 			}
 			executeFile("clientexecutable.o");
-			if (validateFiles("out.out","correctoutput.out")==true && $r==-1){
+			if (validateFiles("codevalidation/out.out","codevalidation/correctoutput.out")==true && $r==-1){
 					echo "Correct solution";
 					$r= 0;
 			}
@@ -29,10 +30,10 @@
 				}
 			}
 			return $r ; 
-			unlink("clientexecutable.o");
-			unlink("out.out");
+//			unlink("codevalidation/clientexecutable.o");
+//			unlink("codevalidation/out.out");
 //			shell_exec("rm clientexecutable.o");
 	//		shell_exec("rm out.out");
 	}
-	automaticJudge("clientcode.cpp");
+//	automaticJudge("clientcode.cpp");
 ?>

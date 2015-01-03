@@ -1,16 +1,19 @@
 <?php
 		session_start();
 
+		include "codevalidation/automaticjudge.php";
+
+		$code = $_POST['code_txt'];
+		$myFile =fopen("codevalidation/clientCode.cpp","w");
+		fwrite($myFile,$code);
+
+		automaticJudge("codevalidation/clientCode.cpp");
 		$conn= mysqli_connect("localhost","root","","subtask");
 		if (mysqli_connect_errno()){
 				echo "Database failure";
 		}
-
-
 		$currentUser= $_SESSION["current_user_name"];
 		
-
-
 		$query= " SELECT * FROM users WHERE user_name = \"$currentUser\" ";
 		$queryResult= mysqli_query($conn,$query);
 		if ($queryResult==false){
