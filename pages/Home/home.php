@@ -1,11 +1,13 @@
 <?php
 	session_start();
+		if(isset($_SESSION["current_user_name"]))
+	echo $_SESSION["current_user_name"];
 ?>
 <!DOCTYPE html>
 <html>
 	<head>
 
-<meta charset="utf-8">
+	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <script>
@@ -19,10 +21,10 @@
 	<link rel='stylesheet' href='../../globalstyling.css'>
 
 	</head>
-	<body style="background-image: url('monkey.png');   background-color: #00231F;
+<body style="background-image: url('monkey.png');   background-color: #00231F;
     background-repeat: no-repeat;background-size: 1400px 700px;   " >
 
-      <?php
+   <?php
          if(isset($_SESSION["loggedin"])){
             ?>
              <input type="button" class="btn btn-default" value="log out" style="color:#02CEC0; float: right;"
@@ -94,13 +96,16 @@
                  <span  style=" font-weight: 500; font-size:17px; color:white;" > 
                  	welcome 
                  	<?php    
-                 	 echo" <a href='http://127.0.0.1/subtask/pages/Profile/profile.php'>$_SESSION[current_user_name]</a>";
+                 	 echo" <a href='../Profile/profile.php'>$_SESSION[current_user_name]</a>";
                  	 ?> 
                  </span></br></br>
 	
-								<input type="button" class="btn btn-info" value="Practice !" style="color:#000000;" 
-                 onclick='document.location.href= "http://127.0.0.1/subtask/pages/Practice/practice.php" '/>
 
+
+
+				<input type="button" class="btn btn-info" value="Practice !" style="color:#000000;" 
+                 onclick='   document.location.href= "../Practice/practice.php"  '/>
+                 
 
 			
 

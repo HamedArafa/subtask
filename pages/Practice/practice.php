@@ -1,8 +1,5 @@
 <?php
-
-		session_start();
-
-	echo $_SESSION["current_user_name"];
+	session_start();
 
 ?>
 <html>
@@ -31,13 +28,10 @@
 		//$_SESSION["current_user_name"]="nada"; //*******************************
 
 
-    echo $_SESSION["current_user_name"];
+    //echo $_SESSION["current_user_name"];
 		$currentUser=$_SESSION["current_user_name"];
 
 
-
-
-	
 		$query= " SELECT * FROM users WHERE user_name = '$currentUser' ";
 		$queryResult= mysqli_query($conn,$query);
 		if ($queryResult==false){
@@ -45,14 +39,16 @@
 		} 
 		$row= mysqli_fetch_array($queryResult);
 		$currentProblem = $row[ 'prob_id' ];
-		echo "current problem:" . $currentProblem ;
+
+		
+		//echo "current problem:" . $currentProblem ;
 
 		$queryResult=mysqli_query($conn,"select * from problems where prob_id= '$currentProblem' ");
 		if ($queryResult==false){
 				echo "Error";
 		}
 		$row= mysqli_fetch_array($queryResult);
-		
+		$currentProblemName= $row ['prob_name'];
 		$problemDirectory= "../../" . $row['prob_dir'];
 
 		$disc= readMyFile($problemDirectory . "/description.txt" );
