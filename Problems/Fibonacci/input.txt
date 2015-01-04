@@ -1,0 +1,2 @@
+integer t; 1<=t<=30, followed by t lines
+each of them consists of integer n ; 1<=n<=30

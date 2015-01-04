@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type='text/javascript' src='../../bower_components/jquery/dist/jquery.js'></script>		
+		<script type='text/javascript' src='../../bower_components/bootstrap/dist/js/bootstrap.js'></script>
+
+		<link rel='stylesheet' href='../../bower_components/bootstrap/dist/css/bootstrap.min.css'>
+		<link rel='stylesheet' href='../../globalstyling.css'>
+	</head>
+
+	<body style="background-image: url('monkey.png');  background-color: #00231F;
+    background-repeat: no-repeat;background-size: 1400px 700px;   " >
+
+		<h1 style="text-align: center;color:#02CEC0;">Registration Form</h1>
+		<form class="form-horizontal" id="myform"  name="myform" onsubmit="submitValidation()" 
+			action="register_process.php" method="post" enctype="multipart/form-data" style="color:white">
+
+
+			<div class="form-group" >
+			    <label class="col-sm-1 control-label">First Name</label>
+			    <div class="col-sm-3">
+
+			      <input style="width:200" type="text"   class="form-control" id="fname_txt" name="fname_txt" placeholder="first name" 
+			      		onkeyup="validateFirstName();">
+			      </input >
+			    </div>
+			  </div>
+
+
+
+
+
+			<div class="form-group" >
+			    <label class="col-sm-1 control-label">Last Name</label>
+			    <div class="col-sm-3">
+
+			      <input style="width:200" type="text"   class="form-control" id="lname_txt" name="lname_txt" placeholder="last name"
+			      		onkeyup="validateLastName();">
+			      </input >
+			    </div>
+			  </div>
+
+
+
+
+			<div class="form-group" >
+			    <label class="col-sm-1 control-label">User Name</label>
+			    <div class="col-sm-3">
+
+			      <input style="width:200" type="text"   class="form-control" id="uname_txt" name="uname_txt" placeholder="user name"
+			      		onkeyup="validateUserName()">
+			      </input >
+			    </div>
+			  </div>
+
+
+
+			<div class="form-group" >
+			    <label class="col-sm-1 control-label">Password</label>
+			    <div class="col-sm-3">
+
+			      <input style="width:200" type="password"   class="form-control" id="pass1_txt" name="pass1_txt"  placeholder="*****"
+			      		onkeyup="validatePassword()">
+			      </input >
+			    </div>
+			 </div>
+
+
+
+
+			<div class="form-group" >
+			    <label class="col-sm-1 control-label">Re-Password</label>
+			    <div class="col-sm-3">
+
+			      <input style="width:200" type="password"   class="form-control" id="pass2_txt" name="pass2_txt"  placeholder="*****"
+			      		onkeyup="validatePassword()">
+			      </input >
+			    </div>
+			 </div>
+
+	
+				<div class="form-group" >
+					<label class="col-sm-1 control-label">Email</label>
+			    <div class="col-sm-3">
+
+			      <input style="width:200" type="email"   class="form-control" id="email_txt" name="email_txt"   placeholder="email@domain.com"
+			      		onkeyup="validateEmail()">
+			      </input >
+			    </div>
+			 </div>
+			<div class="btn-group">
+				<select  id="country" class="btn btn-default dropdown-toggle" name ='country'>
+				</select>
+			</div>
+         <br/><br/>
+
+
+			<textarea rows="4" cols="50" id="quote" name="quote"  float="left" style="color:black;" 
+			placeholder='  type your quote here'></textarea>  <br/>
+
+
+
+
+			<div class="input-group">
+  				<span class="input-group-addon" id="sizing-addon2" >upload photo</span>
+				<span class="btn btn-default btn-file">
+				    browse <input type="file" id="browse_btn" name="photo"  
+					accept="image/gif, image/jpeg, image/x-ms-bmp, image/x-png">
+				</span>
+			</div>
+			</br>
+			    
+	    <input class="btn btn-primary" type="submit" value="Register" id="submit_btn"/>
+			<input type="text" id='country_hidden' name='country_hidden' hidden> 
+		</form>
+		<script type='text/javascript'  src='register.js' > </script>
+
+	</body>
+</html>

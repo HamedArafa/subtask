@@ -1,0 +1,1 @@
+Output t lines which are the number of divisors of n for every given query
